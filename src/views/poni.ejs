@@ -1,0 +1,60 @@
+<%- include('partials/cabecera')%>
+<%- include('partials/nav')%>
+<section class="flex items-center justify-center flex-wrap mt-10 gap-x-6 gap-y-6 mb-5">
+    <%if (ponis && ponis.length > 0) {%>
+        <% for (poni of ponis) {%>
+            <div class="flex w-full">
+                <div class="rounded-lg h-[10rem] flex w-[20%] flex-col ml-8">
+                    <div class="w-[100%] flex flex-col">
+                        <img src="<%= poni.imagen %>" alt="" class="w-full h-full object-cover rounded-lg cursor-pointer shadow-xl mb-3">
+                        <h1 class="text-pink-300 font-titulos tracking-wide text-2xl text-center"><%= poni.nombre%></h1>
+                    </div>                   
+                </div>
+                <div class="text-xl w-[90%] items-center justify-center flex flex-col">
+                    <div class="flex items-center justify-center w-full mx-auto font-description">
+                        <p class="mt-3 mb-3 w-[90%] text-justify">
+                            <%=poni.descripcion%>
+                        </p>
+                    </div>
+                    <div class="my-4 bg-pink-900 rounded-lg w-[75%] p-3 shadow-lg gap-x-5 flex flex-col">
+                        <div class="flex items-center justify-center w-full">
+                            <p class="w-1/3 text-center font-bold">TIPO</p>
+                            <p class="w-1/3 text-center font-bold">HABILIDAD</p>
+                            <p class="w-1/3 text-center font-bold">COLOR</p>
+                        </div>
+                        <div class="flex items-center justify-center w-full mb-6">
+                            <p class="w-1/3 text-center"><%= poni.tipo%></p>
+                            <p class="w-1/3 text-center"><%= poni.habilidad%></p>
+                            <p class="w-1/3 text-center"><%= poni.color%></p>
+                        </div>
+                        <div class="flex items-center justify-center w-full">
+                            <p class="w-1/3 text-center font-bold">PERSONALIDAD</p>
+                            <p class="w-1/3 text-center font-bold">AFILIACIÓN</p>
+                            <p class="w-1/3 text-center font-bold">MEJOR AMIGO</p>
+                        </div>
+                        <div class="flex items-center justify-center w-full mb-4">
+                            <p class="w-1/3 text-center"><%= poni.personalidad%></p>
+                            <p class="w-1/3 text-center"><%= poni.afiliacion%></p>
+                            <p class="w-1/3 text-center"><%= poni.mejor_amigo%></p>
+                        </div>
+                    </div>
+                    <div class="flex w-full items-center justify-center mt-5">
+                        <form action="/borrar" method="post">
+                            <button name="eliminar_poni" value="<%=poni.id%>" class="bg-[#E78AC6] text-white px-4 py-2 mr-2 rounded hover:bg-pink-700 relative bottom-3 mr-6">
+                                Eliminar
+                            </button>
+                        </form>
+                        <form action="/editar" method="post">
+                            <button name="editar_poni" value="<%=poni.id%>" class="bg-purple-500 text-white px-4 py-2 mr-2 rounded hover:bg-purple-700 relative bottom-3">
+                                Editar
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+    <% }else{%>
+        <p class="text-pink-300 font-titulos text-2xl">No hay ponies con los criterios específicados.</p>
+    <% } %>
+</section>
+<%- include('partials/footer')%>

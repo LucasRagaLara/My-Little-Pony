@@ -1,0 +1,12 @@
+<%- include('partials/cabecera')%>
+<section class="flex flex-col h-screen items-center justify-center">
+    <a href="/"><i class="fa-solid fa-arrow-left text-pink-500 text-4xl absolute top-10 left-10 cursor-pointer hover:text-pink-700"></i></a>
+    <form action="/users/registrarse" class="bg-pink-900 p-5 shadow rounded-lg flex flex-col items-center justify-center w-[20%] gap-y-3" method="POST">
+        <input type="text" name="nombre" placeholder="Nombre" class="bg-pink-300 px-4 py-2 outline-none rounded-lg text-center placeholder:text-white" required minlength="3">
+        <input type="text" name="username" placeholder="Username" class="bg-pink-300 px-4 py-2 outline-none rounded-lg text-center placeholder:text-white" required minlength="3">
+        <input type="email" name="email" placeholder="Email" class="bg-pink-300 px-4 py-2 outline-none rounded-lg text-center placeholder:text-white" required minlength="3">
+        <input type="password" name="password" placeholder="Password" class="bg-pink-300 px-4 py-2 outline-none rounded-lg text-center placeholder:text-white mb-3" required minlength="3">
+        <button type="submit" class="bg-pink-300 px-4 py-2 rounded-lg mr-3 hover:bg-pink-500">Registrarse</button>
+    </form>
+</section>
+<%- include('partials/footer')%>

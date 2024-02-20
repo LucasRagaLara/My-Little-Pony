@@ -1,0 +1,18 @@
+<nav class="bg-pink-700 h-20 w-full flex items-center justify-start p-2">
+    <div class="w-[7%] ml-5">
+        <a href="home" class="text-xl text-white cursor-pointer hover:text-pink-100 cursor-pointer"><img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ec545603-cf4e-48e0-936d-5376ea12fdc0/dfwqnsx-3b8a1187-2175-4a03-aee5-b2cd171d27d8.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2VjNTQ1NjAzLWNmNGUtNDhlMC05MzZkLTUzNzZlYTEyZmRjMFwvZGZ3cW5zeC0zYjhhMTE4Ny0yMTc1LTRhMDMtYWVlNS1iMmNkMTcxZDI3ZDgucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.axDFYfCii92khOBqcx00BuLxqJgMMYfcoLdsbCYeF7U" class="w-[67%]"></a>
+    </div>
+    <div class="w-[75%]">
+        <form action="/filtrarPoni" method="POST">
+            <input type="text" placeholder="Busca tu poni" name="poni" class="bg-pink-300  py-2 outline-none rounded-lg text-center placeholder:text-white mr-2">
+            <button type="submit" class="bg-pink-300 px-4 py-2 outline-none rounded-lg text-center placeholder:text-white">Buscar</button>
+        </form>
+    </div>
+    <div class="w-[25%] flex items-center justify-center gap-x-10">
+        <a href="home" class="text-xl text-white cursor-pointer hover:text-pink-100">Inicio</a>
+        <a href="agregar" class="text-xl text-white cursor-pointer hover:text-pink-100">Agregar</a>
+        <form action="/logout" method="POST">
+            <button type="submit" class="bg-pink-300 px-4 py-2 outline-none rounded-lg text-center placeholder:text-white">Cerrar sesión</button>
+        </form>
+    </div>
+</nav>

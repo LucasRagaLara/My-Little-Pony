@@ -1,0 +1,12 @@
+body {
+    background: linear-gradient(to right, rgb(244, 114, 182), rgb(219, 39, 119));
+    color: #fff;
+}
+
+.font-titulos{
+    font-family: "Protest Riot", sans-serif;
+}
+
+.font-description{
+    font-family: "Fredoka", sans-serif;
+}

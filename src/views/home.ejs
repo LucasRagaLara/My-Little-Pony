@@ -1,0 +1,26 @@
+<%- include('partials/cabecera')%>
+<%- include('partials/nav')%>
+<section class="flex items-center justify-center flex-wrap mt-10 gap-x-6 gap-y-6 mb-5">
+    <%if (ponis && ponis.length > 0) {%>
+        <% for (poni of ponis) {%>
+            <div class="rounded-lg h-[10rem] flex items-center justify-center w-[20%] h-[20rem] flex-col">
+                <div class="relative w-64 h-64">
+                    <img src="<%= poni.imagen %>" alt="" class="w-full h-full object-cover rounded-lg cursor-pointer shadow-xl">
+                    <div class="absolute inset-0 flex flex-col items-center opacity-0 hover:opacity-100 transition-opacity duration-300 bg-black bg-opacity-50 rounded-lg justify-center gap-y-10">
+                      <p class="text-center mb-2 text-2xl text-[#FF9BDB] font-titulos rounded bg-opacity-60 rounded-lg px-4 py-1 tracking-wide"><%=poni.nombre%></p>  
+                      <p class="text-center mb-2 text-2xl text-[#FF9BDB] font-titulos rounded bg-opacity-60 rounded-lg px-4 py-1 tracking-wide "><%=poni.personalidad%></p>
+                      <div class="flex items-end justify-center gap-x-4">
+                        <form action="/saber" method="post">
+                            <input type="hidden" name="id_poni" value="<%= poni.id %>">
+                            <button class="bg-pink-500 text-white px-4 py-2 mr-2 rounded hover:bg-pink-600 relative bottom-3">Saber más</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>                    
+            </div>
+        <% } %>
+    <% }else{%>
+        <p class="text-pink-300 font-titulos text-2xl">No hay ponies con los criterios específicados.</p>
+    <% } %>
+</section>
+<%- include('partials/footer')%>
